@@ -16,32 +16,54 @@
             padding-top: 50px;
         }
 
-        .carte {
-            border: #fff;
+        .carteBox {
+            position: relative;
             border-radius: 10px;
             overflow: hidden;
-            height: 300px;
-            width: -moz-fit-content;
-            width: fit-content;
+            height: 400px;
+            width: 500px;
+            background: #fff;
+            background-size: cover;
+            background-repeat: no-repeat;
 
             border: #fff solid 15px;
 
         }
+
+        #fullscreen {
+            position: absolute;
+            background-image: url(./assets/fullscreen.png);
+            background-color: #6C63FF;
+            z-index: 1;
+            width: 67px;
+            height: 67px;
+            border-radius: 10px;
+            right: 5px;
+            bottom: 5px;
+            transition: color 0.5s;
+        }
+        #fullscreen:hover{
+            background-color: #4d47c2;
+            cursor: pointer;
+        }
+
+
     </style>
 </head>
 
 <body>
-    <div class="carte">
-        <img id="carte" src="#" alt="" srcset="">
+    <div class="carteBox">
+        <a href="#" id="fullscreen"></a>
     </div>
 
 
     <script>
         let apiKey = "pk.eyJ1IjoiYW5kcm9uZWRldiIsImEiOiJja3F5MjZnNTIwMHNvMm5vNmoyaTBuaWFkIn0.JiVaHdKKz1te9KKCEyiDGw"
-        let carte = document.getElementById("carte")
+        let carte = document.querySelector(".carteBox");
 
         function updateCarte(geojson) {
-            carte.src = "https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/geojson(" + encodeURIComponent(JSON.stringify(geojson)) + ")/auto/400x300?access_token=" + apiKey
+            carte.style.backgroundImage = "url('https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/geojson(" + encodeURIComponent(JSON.stringify(geojson)) + ")/auto/500x400?access_token=" + apiKey + "')"
+
         }
 
         // démonstration : 
