@@ -3,4 +3,4 @@
 
 
 ### Apérçu :
-![](landingpreview.png)
+![](/assets/landingpreview.png)
