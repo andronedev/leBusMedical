@@ -1,0 +1,44 @@
+
+.barre
+{
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+padding: 26px 75px;
+gap: 57px;
+
+position: absolute;
+height: 80px;
+left: 0px;
+right: 0px;
+top: 0px;
+
+background: #FFFFFF;
+box-shadow: 4px 6px 6px #9BA0BF;
+border-radius: 0px 0px 50px 50px;
+}
+
+.barre a 
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+    font-family: 'Merriweather Sans', sans-serif;
+    color: black;
+    text-decoration:none;
+
+    transition: color 0.5s;
+
+}
+
+.barre a:hover
+{
+    color: #9BA0BF;
+}
+
+.accueil
+{
+    flex-direction: column !important;
+}
