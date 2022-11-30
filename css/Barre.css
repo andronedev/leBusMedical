@@ -1,44 +1,107 @@
+.barre {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 26px 75px;
+    gap: 57px;
 
-.barre
-{
-display: flex;
-flex-direction: row;
-justify-content: space-between;
-align-items: center;
-padding: 26px 75px;
-gap: 57px;
+    position: absolute;
+    height: 30px;
+    left: 0px;
+    right: 0px;
+    top: 0px;
 
-position: absolute;
-height: 80px;
-left: 0px;
-right: 0px;
-top: 0px;
+    background: #FFFFFF;
+    box-shadow: 4px 6px 6px #9BA0BF;
+    border-radius: 0px 0px 50px 50px;
 
-background: #FFFFFF;
-box-shadow: 4px 6px 6px #9BA0BF;
-border-radius: 0px 0px 50px 50px;
+    transition: height 0.5s;
+
 }
 
-.barre a 
-{
+.toggle {
+    display: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+}
+
+.barre a {
+
     display: flex;
     flex-direction: row;
     align-items: center;
-    
+    justify-content: center;
+    gap: 10px;
+
     font-family: 'Merriweather Sans', sans-serif;
     color: black;
-    text-decoration:none;
+    text-decoration: none;
 
-    transition: color 0.5s;
+    transition: color 0.4s linear;
+
 
 }
 
-.barre a:hover
-{
+.barre a:hover {
     color: #9BA0BF;
 }
 
-.accueil
-{
+.barre img {
+    width: 24px;
+    height: 24px;
+}
+
+
+
+.accueil {
     flex-direction: column !important;
+}
+
+
+
+@media screen and (max-width: 800px) {
+    .barre {
+        flex-direction: column;
+        align-items: center;
+
+        gap: 0px;
+        height: 16px;
+        overflow: hidden;
+    }
+
+    .barre a {
+        width: 50%;
+        flex-direction: row;
+        align-items: center;
+        gap: 57px;
+        justify-content: start;
+        display: none;
+    }
+
+    .accueil {
+        flex-direction: row !important;
+    }
+
+    .toggle {
+        display: block;
+        padding-bottom: 20px;
+        cursor: pointer;
+        -webkit-user-select: none;
+        user-select: none;
+    }
+
+    .showMenu a {
+        display: flex !important;
+    }
+
+    .showMenu {
+
+        height: calc(100vh - (26px + 10vh)) !important;
+        border-radius: 0px !important;
+        padding-bottom: 10vh !important;
+
+    }
+
+  
 }
