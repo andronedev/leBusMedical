@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,20 +11,29 @@
     <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/Barre.css">
     <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/carte.css">
     <title>Projet</title>
 </head>
 
 <body>
-   
+
     <div class="barre">
         <span href="#" class="toggle">Ouvrir le menu</span>
         <a href="#"><img src="./assets/Barre/map.png" alt="Icon maps"><span>Maps</span> </a>
         <a href="#"><img src="./assets/Barre/quiz.png" alt="Icon Presentations"> <span>Presentations</span> </a>
-        <a href="#" class="accueil"><img src="./assets/Barre/home.png" alt="Icon Ecran d'acc"> <span>Ecran d'accueil</span> </a>
+        <a href="#" class="accueil"><img src="./assets/Barre/home.png" alt="Icon Ecran d'acc"> <span>Ecran
+                d'accueil</span> </a>
         <a href="#"><img src="./assets/Barre/diversity.png" alt="Icon maps"> <span>Equipes</span> </a>
         <a href="#"><img src="./assets/Barre/share.png" alt="Icon maps"> <span>Reseaux Sociaux</span> </a>
     </div>
 
+
+    <?-- carte -->
+    <div class="carte">
+    <div class="carteBox">
+        <a href="#" id="fullscreen"></a>
+    </div>
+    </div>
 
     <script>
         // permet de faire fonctionner le bouton toggle de la barre de navigation
@@ -49,5 +59,7 @@
         });
 
     </script>
+
+    <script src="./assets/scripts/carte.js"></script>
 </body>
 </html>
