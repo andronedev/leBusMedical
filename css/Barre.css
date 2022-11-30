@@ -79,13 +79,20 @@
         display: none;
     }
 
+    .barre a span {
+        font-size: x-large;
+    }
+    .barre a img {
+        width: 28px;
+        height: 28px;
+    }
     .accueil {
         flex-direction: row !important;
     }
 
     .toggle {
         display: block;
-        padding-bottom: 20px;
+        padding-bottom: 10px;
         cursor: pointer;
         -webkit-user-select: none;
         user-select: none;
@@ -97,10 +104,13 @@
 
     .showMenu {
 
-        height: calc(100vh - (26px + 10vh)) !important;
+        height: calc(100vh - (26px + 12vh)) !important;
         border-radius: 0px !important;
-        padding-bottom: 10vh !important;
+        padding-bottom: 12vh !important;
 
+    }
+    .showMenu .toggle {
+        padding-bottom: 0 !important;
     }
 
   
