@@ -1,6 +1,6 @@
 let apiKey = "pk.eyJ1IjoiYW5kcm9uZWRldiIsImEiOiJja3F5MjZnNTIwMHNvMm5vNmoyaTBuaWFkIn0.JiVaHdKKz1te9KKCEyiDGw"
 let carte = document.querySelector(".carteBox");
-
+let toggleFullscreen = document.querySelector("#fullscreen");
 function updateCarte(geojson) {
     carte.style.backgroundImage = "url('https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/geojson(" + encodeURIComponent(JSON.stringify(geojson)) + ")/auto/500x400?access_token=" + apiKey + "')"
 
@@ -100,3 +100,19 @@ let demo = {
 updateCarte(
     demo
 )
+
+
+// TODO : améliorer pour que la carte google ne soit pas un parcours
+function generateGoogleMapsLink(geojson) {
+    let url = "https://www.google.com/maps/dir/";
+    for (let i = 0; i < geojson.features.length; i++) {
+        if (geojson.features[i].geometry.type == "Point") {
+            url += geojson.features[i].geometry.coordinates[1] + "," + geojson.features[i].geometry.coordinates[0] + "/";
+        }
+    }
+    return url;
+}
+
+toggleFullscreen.addEventListener("click", function () {
+    window.open(generateGoogleMapsLink(demo), "_blank")
+})
