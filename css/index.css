@@ -2,5 +2,12 @@ body{
 
     background: #CFD5FF;
 
-    padding-top: 75px;
+    padding-top: 85px;
+}
+
+@media screen and (max-width: 800px) {
+    body{
+        padding-top: 75px;
+    }
+    
 }
