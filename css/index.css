@@ -1,8 +1,9 @@
 body{
 
     background: #CFD5FF;
-
+    overflow: hidden;
     padding-top: 95px;
+
 }
 
 .main {

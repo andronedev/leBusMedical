@@ -31,3 +31,15 @@
     background-color: #4d47c2;
     cursor: pointer;
 }
+
+@media screen and (max-width: 800px) {
+    .carte {
+        flex-grow: 1;
+    }
+    .carteBox {
+        width:auto;
+        height: 400px;
+    }
+
+    
+}
