@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carte </title>
+    <style>
+        .menu{
+            background-color: rgb(255, 235, 210);
+            display: flex;
+            width: 100%;
+            flex-direction: row;
+            align-items: center;
+            height: 80px;
+            border-bottom: black dotted 5px;
+            }
+        
+        .menu a {
+            padding: 20px;
+            color: black;
+            text-decoration:none;
+        }
+
+        
+        body {
+            background: bisque;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .carteBox {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 400px;
+            width: 500px;
+            background: #fff;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-image: url("image\ 3.png");
+
+            border: #fff solid 15px;
+
+        }
+
+        #fullscreen {
+            position: absolute;
+            background-image: url("fullscreen.png");
+            background-color:rgb(175, 111, 16);
+            z-index: 1;
+            width: 67px;
+            height: 67px;
+            border-radius: 10px;
+            right: 5px;
+            bottom: 5px;
+            transition: color 0.5s;
+        }
+        #fullscreen:hover{
+            background-color:bisque;
+            cursor: pointer;
+        }
+
+
+    </style>
+</head>
+
+<body>
+
+    <div class="menu">
+        note : rajouter logo 
+        <a href="#"><img src="" alt="logo"></a>
+        <a href="#">Maps</a>
+        <a href="#">Presentation</a>
+        <a href="#">Ecran D'accueil</a>
+        <a href="#">Equipe</a>
+        <a href="#">Réseaux Sociaux</a>
+    </div>
+
+
+    <div class="carteBox">
+        <a href="#" id="fullscreen"></a>
+    </div>
+</body>
+</html>
