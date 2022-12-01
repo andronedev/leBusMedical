@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carte </title>
+    <title> Maquette N°2 </title>
     <style>
-        .menu{
+
+        .menu {
             background-color: rgb(255, 235, 210);
             display: flex;
             width: 100%;
@@ -15,15 +16,15 @@
             align-items: center;
             height: 80px;
             border-bottom: black dotted 5px;
-            }
-        
-        .menu a {
-            padding: 20px;
-            color: black;
-            text-decoration:none;
         }
 
-        
+        .menu a {
+            padding: 50px;
+            color: black;
+            text-decoration: none;
+        }
+
+
         body {
             background: bisque;
             display: flex;
@@ -43,16 +44,19 @@
             background: #fff;
             background-size: cover;
             background-repeat: no-repeat;
-            background-image: url("image\ 3.png");
+            background-image: url("carte.png");
+            margin-top: 200px;
+            left: 25%;
+            bottom: 550px;
 
-            border: #fff solid 15px;
+            border: #fff solid 10px;
 
         }
 
         #fullscreen {
             position: absolute;
             background-image: url("fullscreen.png");
-            background-color:rgb(175, 111, 16);
+            background-color: rgb(175, 111, 16);
             z-index: 1;
             width: 67px;
             height: 67px;
@@ -61,12 +65,39 @@
             bottom: 5px;
             transition: color 0.5s;
         }
-        #fullscreen:hover{
-            background-color:bisque;
+
+        #fullscreen:hover {
+            background-color: bisque;
             cursor: pointer;
         }
 
+        #logo {
+            height: 75px;
+        }
 
+        #bus {
+            border-radius: 20px;
+
+        }
+
+        h3 {
+            display: flex;
+            font-size: 32px; 
+            text-align: center;
+            color: darkgoldenrod;
+            border-radius: 20px;
+            width: 50%;
+            margin-top: 170px;
+            margin-left: 20px;
+            background-color: rgb(231, 206, 141);
+            padding: 10px;
+
+        }
+        h1{
+            color:goldenrod;
+            font-size: 50px;
+
+        }
     </style>
 </head>
 
@@ -74,17 +105,30 @@
 
     <div class="menu">
 
-        <a href="#"><img src="logo.png" alt="logo"></a>
+        <a href="#"><img id="logo" src="logo.png" alt="logo"></a>
         <a href="#">Maps</a>
         <a href="#">Presentation</a>
         <a href="#">Ecran D'accueil</a>
         <a href="#">Equipe</a>
         <a href="#">Réseaux Sociaux</a>
     </div>
+    <h1> Le Bus Médical </h1>
 
+    <a> <img id="bus" src="bus.jpg"></a>
+    <div>
+        <h3>
+            Notre projet consiste à lutter contre la désertification médicale en zone rurale c'est pour cela que mettons
+            à disposition de la population une équipe médicale itinérante qui se déplace chaque jour de la semaine dans
+            un quartier différent pour soigner sans avoir besoin de prendre de rendez-vous.
+        </h3>
+    </div>
 
     <div class="carteBox">
         <a href="#" id="fullscreen"></a>
     </div>
+
+    
+
 </body>
+
 </html>
