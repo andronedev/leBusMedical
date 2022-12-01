@@ -1,10 +1,18 @@
-let apiKey = "pk.eyJ1IjoiYW5kcm9uZWRldiIsImEiOiJja3F5MjZnNTIwMHNvMm5vNmoyaTBuaWFkIn0.JiVaHdKKz1te9KKCEyiDGw"
-let carte = document.querySelector(".carteBox");
-let toggleFullscreen = document.querySelector("#fullscreen");
-function updateCarte(geojson) {
-    carte.style.backgroundImage = "url('https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/geojson(" + encodeURIComponent(JSON.stringify(geojson)) + ")/auto/500x400?access_token=" + apiKey + "')"
+var map = L.map('map', {
+    fullscreenControl: true,
 
-}
+})
+
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+
+    // Specify the maximum zoom of the map
+    maxZoom: 19,
+
+    // Set the attribution for OpenStreetMaps
+    attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+
 
 // démonstration : 
 let demo = {
@@ -12,7 +20,9 @@ let demo = {
     "features": [
         {
             "type": "Feature",
-            "properties": {},
+            "properties": {
+                "isBus": true,
+            },
             "geometry": {
                 "coordinates": [
                     1.178887835494777,
@@ -23,7 +33,9 @@ let demo = {
         },
         {
             "type": "Feature",
-            "properties": {},
+            "properties": {
+                "isBus": false,
+            },
             "geometry": {
                 "coordinates": [
                     1.1441956796051045,
@@ -34,7 +46,9 @@ let demo = {
         },
         {
             "type": "Feature",
-            "properties": {},
+            "properties": {
+                "isBus": false,
+            },
             "geometry": {
                 "coordinates": [
                     1.1339159966454702,
@@ -45,7 +59,9 @@ let demo = {
         },
         {
             "type": "Feature",
-            "properties": {},
+            "properties": {
+                "isBus": false,
+            },
             "geometry": {
                 "coordinates": [
                     1.1612992627610765,
@@ -56,7 +72,9 @@ let demo = {
         },
         {
             "type": "Feature",
-            "properties": {},
+            "properties": {
+                "isBus": false,
+            },
             "geometry": {
                 "coordinates": [
                     1.1597914492743655,
@@ -67,7 +85,9 @@ let demo = {
         },
         {
             "type": "Feature",
-            "properties": {},
+            "properties": {
+                "isBus": false,
+            },
             "geometry": {
                 "coordinates": [
                     [
@@ -97,22 +117,12 @@ let demo = {
     ]
 }
 
-updateCarte(
-    demo
-)
+
+// import geojson
+let geojson = demo;
+
+// add geojson to map
+L.geoJSON(geojson).addTo(map);
 
 
-// TODO : améliorer pour que la carte google ne soit pas un parcours
-function generateGoogleMapsLink(geojson) {
-    let url = "https://www.google.com/maps/dir/";
-    for (let i = 0; i < geojson.features.length; i++) {
-        if (geojson.features[i].geometry.type == "Point") {
-            url += geojson.features[i].geometry.coordinates[1] + "," + geojson.features[i].geometry.coordinates[0] + "/";
-        }
-    }
-    return url;
-}
-
-toggleFullscreen.addEventListener("click", function () {
-    window.open(generateGoogleMapsLink(demo), "_blank")
-})
+map.fitBounds(L.geoJSON(geojson).getBounds());

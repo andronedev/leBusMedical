@@ -22,9 +22,8 @@
             overflow: hidden;
             height: 400px;
             width: 500px;
-            background: #fff;
-            background-size: cover;
-            background-repeat: no-repeat;
+
+
 
             border: #fff solid 15px;
 
@@ -37,34 +36,50 @@
             z-index: 1;
             width: 67px;
             height: 67px;
-            border-radius: 10px;
-            right: 5px;
-            bottom: 5px;
+            border-radius: 10px 0 0 0;
+            right: 0px;
+            bottom: 0px;
             transition: color 0.5s;
+            z-index: 9999;
         }
-        #fullscreen:hover{
+
+        #fullscreen:hover {
             background-color: #4d47c2;
             cursor: pointer;
         }
-
-
     </style>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+        integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+        integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+    <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
+    <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'
+        rel='stylesheet' />
 </head>
 
 <body>
-    <div class="carteBox">
-        <a href="#" id="fullscreen"></a>
+    <div id="map" class="carteBox">
+
     </div>
 
 
     <script>
-        let apiKey = "pk.eyJ1IjoiYW5kcm9uZWRldiIsImEiOiJja3F5MjZnNTIwMHNvMm5vNmoyaTBuaWFkIn0.JiVaHdKKz1te9KKCEyiDGw"
-        let carte = document.querySelector(".carteBox");
+        var map = L.map('map', {
+            fullscreenControl: true,
 
-        function updateCarte(geojson) {
-            carte.style.backgroundImage = "url('https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/geojson(" + encodeURIComponent(JSON.stringify(geojson)) + ")/auto/500x400?access_token=" + apiKey + "')"
+        })
 
-        }
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+
+            // Specify the maximum zoom of the map
+            maxZoom: 19,
+
+            // Set the attribution for OpenStreetMaps
+            attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
 
         // démonstration : 
         let demo = {
@@ -72,7 +87,9 @@
             "features": [
                 {
                     "type": "Feature",
-                    "properties": {},
+                    "properties": {
+                        "isBus": true,
+                    },
                     "geometry": {
                         "coordinates": [
                             1.178887835494777,
@@ -83,7 +100,9 @@
                 },
                 {
                     "type": "Feature",
-                    "properties": {},
+                    "properties": {
+                        "isBus": false,
+                    },
                     "geometry": {
                         "coordinates": [
                             1.1441956796051045,
@@ -94,7 +113,9 @@
                 },
                 {
                     "type": "Feature",
-                    "properties": {},
+                    "properties": {
+                        "isBus": false,
+                    },
                     "geometry": {
                         "coordinates": [
                             1.1339159966454702,
@@ -105,7 +126,9 @@
                 },
                 {
                     "type": "Feature",
-                    "properties": {},
+                    "properties": {
+                        "isBus": false,
+                    },
                     "geometry": {
                         "coordinates": [
                             1.1612992627610765,
@@ -116,7 +139,9 @@
                 },
                 {
                     "type": "Feature",
-                    "properties": {},
+                    "properties": {
+                        "isBus": false,
+                    },
                     "geometry": {
                         "coordinates": [
                             1.1597914492743655,
@@ -127,7 +152,9 @@
                 },
                 {
                     "type": "Feature",
-                    "properties": {},
+                    "properties": {
+                        "isBus": false,
+                    },
                     "geometry": {
                         "coordinates": [
                             [
@@ -157,9 +184,16 @@
             ]
         }
 
-        updateCarte(
-            demo
-        )
+
+        // import geojson
+        let geojson = demo;
+
+        // add geojson to map
+        L.geoJSON(geojson).addTo(map);
+
+
+        map.fitBounds(L.geoJSON(geojson).getBounds());
+
 
 
     </script>

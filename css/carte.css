@@ -1,45 +1,26 @@
-.carte{
-    display: block;
-}
 .carteBox {
     position: relative;
     border-radius: 10px;
     overflow: hidden;
     height: 400px;
     width: 500px;
-    background: #fff;
-    background-size: cover;
-    background-repeat: no-repeat;
+
+
 
     border: #fff solid 15px;
 
 }
 
-#fullscreen {
-    position: absolute;
-    background-image: url(../assets/fullscreen.png);
-    background-color: #6C63FF;
-    z-index: 1;
-    width: 67px;
-    height: 67px;
-    border-radius: 10px;
-    right: 5px;
-    bottom: 5px;
-    transition: color 0.5s;
-}
-#fullscreen:hover{
-    background-color: #4d47c2;
-    cursor: pointer;
-}
 
 @media screen and (max-width: 800px) {
     .carte {
         flex-grow: 1;
     }
+
     .carteBox {
-        width:auto;
+        width: auto;
         height: 400px;
     }
 
-    
+
 }
