@@ -55,7 +55,38 @@
         .fond_route .bus {
             position: absolute;
             bottom: 50px;
-            animation:  bus_arrival 4s;
+            animation: bus_arrival 4s ease;
+        }
+
+        .fond_route .bus span{
+
+            z-index: 9;
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgb(0, 0, 0);           
+            animation: time 2s linear infinite 4s both;
+
+
+
+        }
+        @keyframes time {
+            0% {
+                color: rgb(0, 0, 0);
+            }
+
+            45% {
+                color: rgba(255, 255, 255, 0);
+            }
+            55% {
+                color: rgb(0, 0, 0);
+            }
+
+            100% {
+                color: rgb(0, 0, 0);
+            }
+            
         }
 
         .fond_route .bus img {
@@ -72,22 +103,24 @@
 
         @keyframes bus_arrival {
             0% {
-                transform: rotate(15deg) scale(1);
+                transform: rotate(10deg) scale(1);
                 left: 100px;
                 bottom: -150px;
             }
 
             50% {
                 left: 300px;
-                transform: rotate(-15deg) scale(1);
-       
+                transform: rotate(-10deg) scale(1);
+                bottom: 0px;
             }
 
             100% {
                 transform: rotate(0deg) scale(1);
                 left: 196px;
+                bottom: 50px;
             }
         }
+
         /*
         animate dot infinity
         */
@@ -103,6 +136,99 @@
 
             100% {
                 transform: translateY(100px);
+            }
+        }
+
+
+        .arrets {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            width: 90%;
+            margin-top: 0px;
+            animation: arrets 5s linear;
+            padding-bottom: 100px;
+        }
+
+        .arrets .arrets_range {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: -100px;
+        }
+
+        .arrets .arrets_range .arret {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 30%;
+            color: #fff;
+            background-color: #4a5181;
+            border-radius: 10px;
+            box-shadow: inset 0 0 40px 0 #000000af;
+            padding: 10px;
+        }
+        .current_arret {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 30%;
+            background-color: #fff;
+                color: #000;
+            border-radius: 10px;
+            box-shadow: inset 0 0 40px 0 #000000af;
+            padding: 10px;
+            animation: current_iluminate 6s linear;
+        }
+        @keyframes current_iluminate {
+            0% {
+                color: #fff;
+            background-color: #4a5181;
+            }
+            90% {
+                color: #fff;
+            background-color: #4a5181;
+            }
+            100% {
+                background-color: #fff;
+                color: #000;
+            }
+        }
+
+        .arrets .arrets_range .arret h2 {
+            font-size: 20px;
+            text-align: center;
+        }
+
+        .arrets .arrets_range .arret:first-child {
+            margin-top: 150px;
+        }
+        .arrets .arrets_range .current_arret:first-child {
+            margin-top: 150px;
+        }
+        .break-flex {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        @keyframes arrets {
+            0% {
+                margin-top: -1000px;
+            }
+            50% {
+                margin-top: -1000px;
+                
+            }
+
+            100% {
+                margin-top: 0px;
+
+           
             }
         }
     </style>
@@ -127,9 +253,78 @@
                 <div class="dot"></div>
             </div>
         </div>
+
+
+
+        <div class="arrets">
+            <div class="arrets_range">
+                <div class="arret">
+                    <h2>
+                        Sières
+                    </h2>
+                    <time>
+                        18:00
+                    </time>
+                </div>
+                <div class="arret">
+                    <h2>
+                        Audinac-les-Bains
+                    </h2>
+                    <time>
+                        20:00
+                    </time>
+                </div>
+
+            </div>
+            <div class="arrets_range">
+                <div class="arret">
+                    <h2>
+                        Saint-Lizier
+                    </h2>
+                    <time>
+                        10:00
+                    </time>
+                </div>
+                <div class="arret">
+                    <h2>
+                        Saint-Girons
+                    </h2>
+                    <time>
+                        9:00
+                    </time>
+                </div>
+
+            </div>
+            <div class="arrets_range">
+                <div class="current_arret">
+                    <h2>
+                        Plaine d'Eycheil
+                    </h2>
+                    <time>
+                        8:00
+                    </time>
+                </div>
+                <div class="arret">
+                    <h2>
+                        Montjoie-en-couserans
+                    </h2>
+                    <time>
+                        7:00
+                    </time>
+                </div>
+
+            </div>
+
+        </div>
+
         <div class="bus">
             <img src="./assets/bus.png" alt="">
+            <span>8:00</span>
         </div>
+    </div>
+
+
+
     </div>
 
 </body>

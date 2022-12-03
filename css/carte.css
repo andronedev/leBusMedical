@@ -2,25 +2,27 @@
     position: relative;
     border-radius: 10px;
     overflow: hidden;
-    height: 400px;
-    width: 500px;
+
+    max-width: 500px;
+    min-width: 300px;
+    max-height: 500px;
+    min-height: 500px;
 
 
 
-    border: #fff solid 15px;
 
+}
+.carte{
+
+    max-width: 500px;
+    min-width: 300px;
+    max-height: 500px;
+    min-height: 300px;
 }
 
 
 @media screen and (max-width: 800px) {
-    .carte {
-        flex-grow: 1;
-    }
 
-    .carteBox {
-        width: auto;
-        height: 400px;
-    }
 
 
 }
