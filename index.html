@@ -5,14 +5,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <!--Permet de preparer le chargement de la police depuis google font-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="./css/Barre.css">
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./css/carte.css">
     <link rel="stylesheet" href="./css/route.css">
+    <link rel="stylesheet" href="./css/caroussel.css">
+    <link rel="stylesheet" href="./css/presentation.css">
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
         integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
@@ -22,10 +26,29 @@
     <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'
         rel='stylesheet' />
     <title>Projet</title>
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 </head>
 
 <body>
-
+    
+    <!-- Carousel -->
+    <div class="p-carousel">
+        <div class="main-carousel" data-flickity='{ "cellAlign": "center", "wrapAround": true , "autoPlay": 2000 , "pauseAutoPlayOnHover": false }'>
+            <div class="carousel-cell"><img src="./assets/carroussel/busMedical.png"></div>
+            <div class="carousel-cell"><img src="./assets/carroussel/logo.png"></div>
+        </div>
+    </div>
+    <div class="presentation">
+        <span>Notre bus médical :
+            <ol>
+                <li>Vise à lutter contre la désertification médicale en zone rurale.</li>
+                <li>Met à disposition de la population une équipe médicale itinérante.</li>
+                <li>Il se déplace chaque semaine dans un quartier différent de la commune pour soigner sans rendez-vous.</li>
+            </ol>
+            Il arrive à 9h et stationne jusqu’à 20h sur la place de la mairie. Les consultations sont sans RDV et gratuites sur présentation de la carte vitale. 
+        </span>
+    </div>
     <div class="barre">
         <span href="#" class="toggle">Ouvrir le menu</span>
         <a href="#"><img src="./assets/Barre/map.png" alt="Icon maps"><span>Maps</span> </a>

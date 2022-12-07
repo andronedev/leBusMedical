@@ -1,0 +1,15 @@
+.presentation
+{
+    display: flex;
+    text-align: justify;
+    padding: 0;
+    width: 50%;
+    
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5em;
+    
+    position: absolute;
+    right: 0px;
+    top: 190px;
+    
+}
