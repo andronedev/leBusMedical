@@ -1,9 +1,28 @@
+.titre{
+    text-align: center;
+    font-family: 'Impact', sans-serif;
+    font-size: 5em;
+    color: rgb(255, 255, 255);
+    padding: 10px;
+}
+
+.slogan{
+    text-align: center;
+    font-family: 'Merriweather', sans-serif;
+    font-size: 1.5em;
+
+}
 .presentation
 {
     display: flex;
-    text-align: justify;
+    text-align: left;
     width: 100%;
     font-family: 'Roboto', sans-serif;
-    font-size: 1.5em;
+    font-size: 1em;
     
+    border: 5px white solid;
+    border-radius: 20px;
+    padding: 60px;
+    padding-left:10px;
+
 }
