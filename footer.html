@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300&display=swap" rel="stylesheet">
     <title>Document</title>
 
 
@@ -12,18 +15,32 @@
         body {
             background-color: #B5BADF;
         }
+        
 
-        .image_SAM {
-            position: absolute;
+        .photo{
+            display: flex;
+                }
+     
+        .photo > div > div {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+
+        }
+        .photo > div > div > p {
+            font-family: 'Roboto', sans-serif;
+            padding-right:400px ;
+
+        }
+
+        .image_SAM img{
             width: 150px;
             height: 150px;
         }
 
-        .image_SIO {
-            position: absolute;
+        .image_SIO img{
             width: 150px;
             height: 150px;
-            left: 1500px;
         }
     </style>
 
@@ -33,17 +50,21 @@
 </head>
 
 <body>
-    <img src="assets/Team/SAM1.png" alt="Girl in a cercle">
-    <div class="image_SAM">
-        <img src="assets/Team/SAM2.png" alt="Girl in a cercle">
-        <img src="assets/Team/SAM3.png" alt="Girl in a cercle">
-        <img src="assets/Team/SAM4.png" alt="Girl in a cercle">
-    </div>
+    <div class="photo">
+        <div class="image_SAM"> 
+            <div><img src="assets/Team/SAM1.png" alt="Girl in a cercle"><p> Chef de Projet : Célia </p></div>
+            <div><img src="assets/Team/SAM2.png" alt="Girl in a cercle"><p> Collaboratrice : Chloé </p></div>
+            <div><img src="assets/Team/SAM3.png" alt="Girl in a cercle"><p> Collaboratrice : Boueni </p></div>
+            <div><img src="assets/Team/SAM4.png" alt="Girl in a cercle"><p> Collaboratrice : Amandine </p></div>
 
-    <div class="image_SIO">
-        <img src="assets/Team/SIO1.png" alt="Boy in a cercle">
-        <img src="assets/Team/SIO3.png" alt="Boy in a cercle">
-        <img src="assets/Team/SIO2.png" alt="Boy in a cercle">
+        </div>
+
+        <div class="image_SIO">
+            <div><img src="assets/Team/SIO1.png" alt="Boy in a cercle"><p> Chef de Projet : José </p></div>
+            <div><img src="assets/Team/SIO2.png" alt="Boy in a cercle"><p> Collaborateur : Nicolas </p></div>
+            <div><img src="assets/Team/SIO3.png" alt="Boy in a cercle"><p> Collaborateur : Antoine </p></div>
+
+        </div>
     </div>
 </body>
 
