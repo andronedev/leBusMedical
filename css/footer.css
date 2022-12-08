@@ -1,0 +1,30 @@
+body {
+    background-color: #B5BADF;
+}
+
+
+.photo{
+    display: flex;
+        }
+
+.photo > div > div {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+}
+.photo > div > div > p {
+    font-family: 'Roboto', sans-serif;
+    padding-right:400px ;
+
+}
+
+.image_SAM img{
+    width: 150px;
+    height: 150px;
+}
+
+.image_SIO img{
+    width: 150px;
+    height: 150px;
+}
