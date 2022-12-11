@@ -6,7 +6,7 @@
     padding: 26px 75px;
     gap: 57px;
 
-    position: absolute;
+    position : fixed;
     z-index: 9999;
     height: 30px;
     left: 0px;
