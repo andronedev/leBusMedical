@@ -26,3 +26,21 @@
     padding-left:10px;
 
 }
+
+@media screen and (max-width: 800px) {
+    .presentation
+    {
+        display: flex;
+        text-align: left;
+        width: 90%;
+        font-family: 'Roboto', sans-serif;
+        font-size: 1em;
+        
+        border: 5px white solid;
+        border-radius: 20px;
+        padding: 60px;
+        padding-left:10px;
+        flex-direction: column;
+        margin: 50px;
+    }
+}
