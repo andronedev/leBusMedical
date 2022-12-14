@@ -38,9 +38,16 @@
         
         border: 5px white solid;
         border-radius: 20px;
-        padding: 60px;
-        padding-left:10px;
+        padding: 20px;
+        padding-left:inherit;
         flex-direction: column;
-        margin: 50px;
+        margin: 0px;
+    }
+    .titre{
+        text-align: center;
+        font-family: 'Impact', sans-serif;
+        font-size: 3em;
+        color: rgb(255, 255, 255);
+        padding: 10px;
     }
 }
